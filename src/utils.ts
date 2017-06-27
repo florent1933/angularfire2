@@ -61,14 +61,12 @@ export function unwrapMapFn (snapshot:firebase.database.DataSnapshot): AFUnwrapp
     };
   }
   Object.defineProperty(unwrapped, '$key', {
-    value: snapshot.ref.key,
-    enumerable: false
+    value: snapshot.ref.key
   });
   Object.defineProperty(unwrapped, '$exists', {
     value: () => {
       return snapshot.exists();
-    },
-    enumerable: false
+    }
   });
   return unwrapped;
 }
